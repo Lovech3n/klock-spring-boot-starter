@@ -1,9 +1,7 @@
 package me.woq.klock.config;
 
 import me.woq.klock.aop.KLockAop;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -14,8 +12,7 @@ import org.springframework.data.redis.core.RedisTemplate;
  * author: YangTao
  */
 @Configuration
-//@AutoConfigureAfter(RedisTemplate.class)
-//@ConditionalOnBean(RedisTemplate.class)
+@ConditionalOnClass(RedisTemplate.class)
 public class KLockAutoConfig {
 
     @Bean
